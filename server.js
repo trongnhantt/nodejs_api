@@ -10,12 +10,12 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', authRoutes);
+//app.use('/api/auth', authRoutes);
 
-//Default route
-app.get("/", (req, res) => {
-  res.send("<h1>Working<h1>");
+app.get('/api', (req, res) => {
+  res.json({ message: 'API is working' });
 });
+
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
